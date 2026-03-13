@@ -14,13 +14,26 @@ Spicetify profile pack for a DynamicGlow-based setup.
 
 `extensions/hexpotify-profile-bootstrap.js` applies predefined `localStorage` settings once, so defaults match this pack.
 
+## Extensions Included (What They Actually Do)
+
+- `extensions/hexpotify.js`: Lyrics++, Visualizer 2.0, Session Stats Live.
+- `extensions/dynamic-glow-config.js`: in-app settings modal for DynamicGlow effects and HEXpotify visualizer parameters.
+- `extensions/hexpotify-profile-bootstrap.js`: one-time bootstrap of `localStorage` defaults for this profile.
+- `extensions/default-dynamic.js`: dynamic metadata/background behavior with API throttling and caching guards.
+- `extensions/dynamicglow-features.js`: extra UI features (including hiding selected default library entries and dynamic lyrics background styling).
+- `extensions/enhanced-effects.js`: animated glow, pulse, transition, and glassmorphism effect layer.
+- `extensions/force-bloom.js`: persistent bloom enforcement for now-playing/sidebar cards.
+- `extensions/innovative-effects.js`: additional visual layers (ripple, cover-art bloom, directional glow effects).
+- `extensions/progress-bar-glow.js`: glow styling for progress and volume bars.
+- `extensions/live-wrapped.js`: "Live Wrapped" / "Match Your Taste" views and focus/cover display modes.
+- `extensions/listPlaylistsWithSong.js`: context-menu action to find playlists in your library containing a selected track.
+- `extensions/dom-inspector.js`: debug helper that logs now-playing/right-sidebar DOM structure to console.
+- `extensions/Vibrant.min.js`: color extraction utility used by visual effects/extensions.
+
 ## Included In This Repository
 
 - `extensions/`:
-	- `hexpotify.js`
-	- `dynamic-glow-config.js`
-	- `hexpotify-profile-bootstrap.js`
-	- additional supporting extensions used by this profile pack
+	- all files listed in "Extensions Included"
 - `custom_apps/`:
 	- `Lyrixed`
 	- `spicetify-history`
