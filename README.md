@@ -1,112 +1,89 @@
-# HEXpotify (Spicetify)
+# HEXpotify
 
-HEXpotify adds:
-- Lyrics++
-- Visualizer 2.0 (reactive + DynamicGlow color sync)
-- Session Stats Live
+Spicetify profile pack for a DynamicGlow-based setup.
 
-This package is ready for GitHub and local import.
+## What It Adds
 
-## 1:1 Profile Mode
+`extensions/hexpotify.js` adds 3 runtime features:
 
-This package now installs an **exact profile preset**:
-- forces theme and key Spicetify config entries
-- installs all bundled extensions used by your profile
-- installs bundled `CustomApps` used by your profile
-- installs bundled `Themes` used by your profile
-- installs bundled `spicetify_profile` snapshot (near-full folder clone)
-- applies matching localStorage config via `hexpotify-profile-bootstrap.js`
+- `Lyrics++`: karaoke-style lyric glow and auto-scroll behavior.
+- `Visualizer 2.0`: bottom bar visualizer with live analyzer + fallback modes and DynamicGlow color sync.
+- `Session Stats Live`: small on-screen HUD with current-session listening stats.
 
-This is the closest possible setup to a 1:1 environment.
+`extensions/dynamic-glow-config.js` provides UI controls for DynamicGlow and HEXpotify visualizer parameters (including opacity, saturation, contrast, brightness, bloom boost, source lock, reconnect timing).
 
-## Files
+`extensions/hexpotify-profile-bootstrap.js` applies predefined `localStorage` settings once, so defaults match this pack.
 
-- `extensions/hexpotify.js`
-- `extensions/dynamic-glow-config.js`
-- `extensions/hexpotify-profile-bootstrap.js`
-- `custom_apps/*` (profile apps)
+## Included In This Repository
+
+- `extensions/`:
+	- `hexpotify.js`
+	- `dynamic-glow-config.js`
+	- `hexpotify-profile-bootstrap.js`
+	- additional supporting extensions used by this profile pack
+- `custom_apps/`:
+	- `Lyrixed`
+	- `spicetify-history`
+	- `marketplace`
+	- `genius-annotations`
+	- `history-in-sidebar`
+	- `Enhancify`
 - `themes/DynamicGlow`
-- `spicetify_profile/*` (near-full profile snapshot)
+- `spicetify_profile/` snapshot used by the full-profile installer
 - `scripts/install.ps1`
 - `scripts/install-full-profile.ps1`
-- `INSTALL-HEXpotify.cmd` (one-click installer)
-- `scripts/build-installer-exe.ps1` (optional EXE builder)
 - `scripts/uninstall.ps1`
+- `INSTALL-HEXpotify.cmd`
 
-## Local Install (Windows)
+## Installation (Windows)
 
-1. Open PowerShell in this folder.
-2. Run:
+### Standard Install
 
 ```powershell
 .\scripts\install.ps1
 spicetify apply
 ```
 
-3. Restart Spotify.
+What this script does:
 
-## One-Click Install (Recommended)
+- Copies bundled extensions to `%APPDATA%\spicetify\Extensions`.
+- Copies bundled custom apps and themes.
+- Enforces key `config-xpui.ini` values:
+	- `current_theme = DynamicGlow`
+	- `color_scheme = Dark-Base`
+	- required extension list
+	- required custom apps list
+	- theme/js/css related flags
 
-Double-click:
-
-`INSTALL-HEXpotify.cmd`
-
-This installs the full profile snapshot and runs `spicetify apply` automatically.
-
-## Optional: Build EXE Installer
+### Full Profile Install
 
 ```powershell
-.\scripts\build-installer-exe.ps1
+.\scripts\install-full-profile.ps1
 ```
 
-This creates `INSTALL-HEXpotify.exe` (uses PS2EXE module).
+What this script does:
 
-## Local Uninstall (Windows)
+- Copies the bundled `spicetify_profile/` snapshot into `%APPDATA%\spicetify`.
+- Ensures HEXpotify extension entries exist in config.
+- Runs `spicetify apply` automatically.
+
+### One-Click Install
+
+Double-click `INSTALL-HEXpotify.cmd`.
+
+## Uninstall
 
 ```powershell
 .\scripts\uninstall.ps1
 spicetify apply
 ```
 
-## GitHub Tutorial
-
-### 1. Create repository
-
-1. Go to GitHub and create a new repository, for example `hexpotify`.
-2. Clone it locally:
-
-```powershell
-git clone https://github.com/<YOUR_USER>/hexpotify.git
-cd hexpotify
-```
-
-### 2. Copy package files
-
-Copy everything from `Export/HEXpotify` into your repo root.
-
-### 3. Commit and push
-
-```powershell
-git add .
-git commit -m "Initial release: HEXpotify"
-git push origin main
-```
-
-### 4. Install from GitHub on any machine
-
-```powershell
-git clone https://github.com/<YOUR_USER>/hexpotify.git
-cd hexpotify
-.\scripts\install.ps1
-spicetify apply
-```
+This removes `hexpotify.js` and `hexpotify-profile-bootstrap.js` from `%APPDATA%\spicetify\Extensions` and from the configured extension list.
 
 ## Notes
 
-- Visualizer settings are exposed in DynamicGlow config menu under `HEXpotify Visualizer 2.0`.
-- Installer intentionally overwrites key config values to keep profile consistent 1:1.
-- `Backup/`, `Extracted/`, and `Export/` are intentionally excluded from the profile snapshot.
-- If you update files later, re-run:
+- This pack configures a reproducible profile preset, but account-bound Spotify data (history, recommendations, library state) is not part of the package.
+- If you update files in this repo, run install again and apply:
 
 ```powershell
 .\scripts\install.ps1
