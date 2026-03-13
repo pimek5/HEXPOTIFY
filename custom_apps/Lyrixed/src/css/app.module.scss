@@ -1,0 +1,32 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  > * {
+    padding: 40px 0;
+  }
+  background-color: gray;
+}
+
+.lyrics_container {
+  top: 0;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 1px;
+  border-radius: 10px;
+  width: 100%;
+  position: absolute;
+  overflow: hidden;
+}
+
+.lyrics {
+  position: relative;
+  color: aliceblue;
+  padding: 25px 0px 0px 25px;
+  font-size: 48px;
+  line-height: 1.5;
+  overflow: scroll !important;
+}

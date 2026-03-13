@@ -1,0 +1,10 @@
+{
+    "name": "Visualizer",
+    "description": "Audio Visualizer for Spicetify",
+    "preview": "resources/screenshot.png",
+    "readme": "README.md",
+    "authors": [
+        { "name": "Konsl", "url": "https://github.com/Konsl" }
+    ],
+    "tags": ["visualizer"]
+}
