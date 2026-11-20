@@ -75,7 +75,7 @@ npm install
 
 - Install the [NW.js](https://nwjs.io/downloads/) files from the original site and paste all of the NW.js files in to the project folder.
 
-- I customized the nw.exe using [Resource Hacker](https://www.angusj.com/resourcehacker/) you can use that program too.
+- I customized the nw.exe using [Resource Hacker](https://www.angusj.com/resourcehacker/) or [Resource Cracker](https://www.pelock.com/products/resource-cracker) you can use that program too.
 
 - If you are planning to use this program locally you can use it as is. However if you're planning to package and redistribute, personally I've used the [Inno Setup](https://jrsoftware.org/isdl.php) but you can use programs like [Enigma Virtual Box](https://www.enigmaprotector.com/en/aboutvb.html)
 
@@ -103,5 +103,5 @@ Normally no. However this program plays with regedit values so I can't say it's 
 - [@weroxima](https://github.com/weroxima) for README.md and name suggestion.
 - [JulienMaille](https://github.com/JulienMaille/spicetify-dynamic-theme) for the 'default-dynamic.js' and the installation guide for it. (MIT)
 - [NW.js](https://github.com/nwjs/nw.js) for the NW.js. (MIT)
-- [Resource Hacker](https://www.angusj.com/resourcehacker/) (All-Rights-Reserved, see https://www.angusj.com/resourcehacker/ for details.)
+- [Resource Hacker](https://www.angusj.com/resourcehacker/) or [Resource Cracker](https://www.pelock.com/products/resource-cracker) (All-Rights-Reserved, see https://www.angusj.com/resourcehacker/ or [Resource Cracker](https://www.pelock.com/products/resource-cracker) for details.)
 - [Inno Setup](https://jrsoftware.org/isdl.php) (Inno Setup License)
